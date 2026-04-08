@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+.playwright-mcp/
+
+# local reference docs (not part of app)
+*.pdf
 
 # debug
 npm-debug.log*
