@@ -47,7 +47,6 @@ export default function Home() {
   return (
     <div>
       <HomeHero />
-      <HomeTimeline />
 
       {/* Process specialists */}
       <section
@@ -104,6 +103,8 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      <HomeTimeline />
 
       {/* Capabilities */}
       <section
