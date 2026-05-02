@@ -1,26 +1,19 @@
-import Image from "next/image";
-
-const HERO_IMAGE =
-  "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mina-Al-Ahmadi_oil_refinery_night.jpg";
-
-/** Fixed refinery + gradient — same treatment as the former hero backdrop, site-wide. */
+/** Solid navy gradient — matches the OGP logo palette. */
 export function SiteBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0" aria-hidden>
-      <Image
-        src={HERO_IMAGE}
-        alt=""
-        fill
-        className="object-cover"
-        style={{ opacity: 0.78 }}
-        priority
-        sizes="100vw"
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(160deg, #091525 0%, #0d2040 55%, #091a30 100%)",
+        }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to top, rgba(18,15,12,0.98) 0%, rgba(18,15,12,0.5) 42%, rgba(18,15,12,0.15) 100%)",
+            "radial-gradient(ellipse at 15% 60%, rgba(26,61,107,0.25) 0%, transparent 55%), radial-gradient(ellipse at 85% 15%, rgba(13,40,80,0.18) 0%, transparent 50%)",
         }}
       />
     </div>

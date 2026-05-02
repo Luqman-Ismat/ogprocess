@@ -7,36 +7,16 @@ import { getTimelineCopy } from "@/i18n/home-timeline-copy";
 import { useI18n } from "@/i18n/LanguageContext";
 
 function TimelineSection({
-  index,
-  title,
   children,
 }: {
-  index: string;
-  title: string;
+  index?: string;
+  title?: string;
   children: ReactNode;
 }) {
   return (
-    <section
-      className="border-t border-[var(--photo-divider)] py-16 sm:py-20 lg:py-24"
-      aria-labelledby={`timeline-${index}-heading`}
-    >
-      <div className="mx-auto flex w-full max-w-none flex-col gap-10 px-5 md:flex-row md:gap-14 md:px-8 lg:gap-16 xl:px-10">
-        <div className="relative shrink-0 md:w-36 md:text-right lg:w-40">
-          <p className="font-mono-label text-[var(--photo-dim)]">{index}</p>
-          <h2
-            id={`timeline-${index}-heading`}
-            className="font-display mt-2 text-2xl font-light leading-tight text-photo sm:text-3xl lg:text-4xl"
-          >
-            {title}
-          </h2>
-        </div>
-        <div className="relative min-w-0 flex-1 border-[var(--photo-divider)] md:border-l md:pl-10 lg:pl-12">
-          <span
-            className="absolute left-0 top-3 hidden h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-[var(--photo-text)] bg-[rgba(10,9,8,0.95)] md:block"
-            aria-hidden
-          />
-          {children}
-        </div>
+    <section className="border-t border-[var(--photo-divider)] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-none px-5 sm:px-6 lg:px-8 xl:px-10">
+        {children}
       </div>
     </section>
   );

@@ -64,7 +64,7 @@ export function Header() {
           aria-label="Oil & Gas Processing, LLC — Home"
           onClick={() => setOpen(false)}
         >
-          <Logo variant="header" interactive inverted />
+          <Logo size="md" />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Main">
@@ -128,7 +128,7 @@ export function Header() {
           className="border-t backdrop-blur-xl"
           style={{
             borderColor: "var(--photo-divider)",
-            background: "rgba(5, 4, 3, 0.92)",
+            background: "rgba(6, 14, 30, 0.95)",
           }}
         >
           <nav className="flex flex-col px-5 py-3" aria-label="Mobile">

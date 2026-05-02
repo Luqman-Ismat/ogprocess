@@ -55,7 +55,7 @@ body {
 }
 
 body[data-photo-site] {
-  background-color: #12100e;
+  background-color: #091525;
   color: var(--photo-muted);
 }
 
@@ -72,16 +72,16 @@ body[data-photo-site] {
   color: var(--photo-dim);
 }
 
-/* Header / footer — dark glass */
+/* Header / footer — dark navy glass */
 .site-chrome-panel {
-  background: rgba(6, 5, 4, 0.72);
+  background: rgba(6, 14, 30, 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   color: var(--photo-muted);
 }
 
 .surface-band {
-  background: rgba(5, 4, 3, 0.5);
+  background: rgba(8, 20, 42, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   color: var(--photo-muted);
@@ -112,9 +112,9 @@ select option {
   color: #f7f5f2;
 }
 
-/* ── Cards / panels — dark glass, light type ─────────────── */
+/* ── Cards / panels — navy glass, light type ─────────────── */
 .glass {
-  background: rgba(8, 7, 6, 0.52);
+  background: rgba(10, 22, 46, 0.58);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
@@ -123,7 +123,7 @@ select option {
 
 /* Dark glass — for panels placed over images ─────────────── */
 .glass-strong {
-  background: rgba(20, 18, 15, 0.62);
+  background: rgba(8, 18, 40, 0.72);
   backdrop-filter: blur(2.5rem);
   -webkit-backdrop-filter: blur(2.5rem);
   border: 1px solid rgba(255, 255, 255, 0.14);

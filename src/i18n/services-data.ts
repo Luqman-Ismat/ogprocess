@@ -1,9 +1,9 @@
 import type { EnergyTile, IndustryCol, Locale, ServicePillar } from "./types";
 
 const IMAGES = {
-  advisory: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Preemraff_Lysekil%27s_Processing_Plant.jpg",
-  engineering: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Oil_refinery_004.JPG",
-  execution: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Preemraff_Lysekil%27s_Processing_Plant.jpg",
+  advisory:     "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mina-Al-Ahmadi_oil_refinery_night.jpg",
+  engineering:  "https://upload.wikimedia.org/wikipedia/commons/5/5e/Preemraff_Lysekil%27s_Processing_Plant.jpg",
+  execution:    "https://upload.wikimedia.org/wikipedia/commons/8/87/Satorp_Refinery_night_view.jpg",
   optimization: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Oil_refinery_004.JPG",
 } as const;
 

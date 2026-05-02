@@ -30,13 +30,7 @@ export function HomeHero() {
       <div className="relative z-10 mx-auto w-full max-w-none px-5 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 xl:px-10">
         <div className="max-w-none">
           <div className="hero-cascade hero-cascade-1">
-            <Logo
-              variant="header"
-              inverted
-              size="lg"
-              wordmark="full"
-              priority
-            />
+            <Logo size="lg" priority />
           </div>
           <h1
             className="hero-cascade hero-cascade-2 font-display mt-8 text-[2.35rem] font-light leading-[0.98] sm:text-5xl lg:text-[3.75rem] lg:leading-[0.98]"

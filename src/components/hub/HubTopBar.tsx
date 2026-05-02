@@ -30,7 +30,7 @@ export function HubTopBar() {
           className="group flex min-w-0 items-center gap-3"
           aria-label={t("hub.hubHome")}
         >
-          <Logo variant="header" inverted interactive />
+          <Logo size="md" />
           <span className="font-mono-label hidden text-[var(--photo-label)] sm:inline">
             {t("hub.topLabel")}
           </span>
