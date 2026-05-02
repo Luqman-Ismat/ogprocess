@@ -66,6 +66,7 @@ export function HubDashboardClient() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "saving" | "ok" | "err">("idle");
   const [submitError, setSubmitError] = useState("");
   const [pastReports, setPastReports] = useState<WeeklyReport[]>([]);
+  const [expandedReport, setExpandedReport] = useState<string | null>(null);
 
   const [files, setFiles] = useState<File[]>([]);
   const [uploadedDocs, setUploadedDocs] = useState<UploadedDoc[]>([]);
@@ -84,7 +85,7 @@ export function HubDashboardClient() {
       .select("id, week_of, tasks, certified, submitted_at")
       .eq("employee_id", session.userId)
       .order("submitted_at", { ascending: false })
-      .limit(5)
+      .limit(20)
       .then(({ data }) => {
         if (data) setPastReports(data as WeeklyReport[]);
       });
@@ -129,7 +130,7 @@ export function HubDashboardClient() {
       .select("id, week_of, tasks, certified, submitted_at")
       .eq("employee_id", session.userId)
       .order("submitted_at", { ascending: false })
-      .limit(5)
+      .limit(20)
       .then(({ data }) => { if (data) setPastReports(data as WeeklyReport[]); });
     setTimeout(() => setSubmitStatus("idle"), 3000);
   }
@@ -271,12 +272,32 @@ export function HubDashboardClient() {
             <div className="glass rounded-2xl p-6">
               <h2 className="font-display text-lg font-light text-[var(--photo-text)]">Past Reports</h2>
               <ul className="mt-4 space-y-3">
-                {pastReports.map((r) => (
-                  <li key={r.id} className="border-t border-[var(--color-border)] pt-3 text-xs text-[var(--photo-muted)]">
-                    <span className="font-medium text-[var(--photo-text)]">Week of {r.week_of}</span>
-                    <p className="mt-1 line-clamp-2">{r.tasks}</p>
-                  </li>
-                ))}
+                {pastReports.map((r) => {
+                  const isOpen = expandedReport === r.id;
+                  return (
+                    <li key={r.id} className="border-t border-[var(--color-border)] pt-3 text-xs text-[var(--photo-muted)]">
+                      <button
+                        type="button"
+                        className="flex w-full items-start justify-between gap-2 text-left"
+                        onClick={() => setExpandedReport(isOpen ? null : r.id)}
+                      >
+                        <span className="font-medium text-[var(--photo-text)]">
+                          Week of {r.week_of}
+                          <span className="ml-2 font-normal text-[var(--color-dim)]">
+                            {new Date(r.submitted_at).toLocaleDateString()}
+                          </span>
+                        </span>
+                        <span className="shrink-0 text-[var(--color-dim)]">{isOpen ? "▲" : "▼"}</span>
+                      </button>
+                      {!isOpen && (
+                        <p className="mt-1 line-clamp-2 text-[var(--photo-muted)]">{r.tasks}</p>
+                      )}
+                      {isOpen && (
+                        <p className="mt-2 whitespace-pre-wrap leading-relaxed text-[var(--photo-muted)]">{r.tasks}</p>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
@@ -304,18 +325,18 @@ export function HubDashboardClient() {
               Completed tasks &amp; documents
             </label>
             <p className="mt-1 text-xs text-[var(--photo-dim)]">
-              Enter a short list of completed tasks and documents during the past week
+              Enter your completed tasks and documents for the past week
             </p>
             <textarea
               id="weekly-tasks"
               value={tasks}
-              onChange={(e) => setTasks(e.target.value.slice(0, 200))}
-              rows={5}
-              maxLength={200}
+              onChange={(e) => setTasks(e.target.value.slice(0, 1000))}
+              rows={8}
+              maxLength={1000}
               placeholder="e.g. Completed P&ID review for Unit 3, submitted HSE report, attended site walk..."
               className="mt-2 w-full resize-none rounded-xl border border-[var(--color-border)] bg-[rgba(8,7,6,0.65)] px-4 py-3 text-sm text-[var(--color-text)] outline-none placeholder:text-[var(--color-dim)] focus:border-[rgba(255,255,255,0.22)] focus:ring-2 focus:ring-[rgba(90,122,90,0.35)]"
             />
-            <p className="mt-1 text-right text-xs text-[var(--photo-dim)]">{tasks.length}/200</p>
+            <p className="mt-1 text-right text-xs text-[var(--photo-dim)]">{tasks.length}/1000</p>
           </div>
 
           <label className="mt-4 flex cursor-pointer items-start gap-3">
