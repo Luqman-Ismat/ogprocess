@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { Logo } from "@/components/Logo";
 import { useI18n } from "@/i18n/LanguageContext";
-import { clearHubSession } from "@/lib/hub-demo-session";
+import { supabase } from "@/lib/supabase";
 
 export function HubTopBar() {
   const { t } = useI18n();
@@ -13,8 +13,8 @@ export function HubTopBar() {
   const router = useRouter();
   const onDashboard = pathname.startsWith("/hub/dashboard");
 
-  function signOut() {
-    clearHubSession();
+  async function signOut() {
+    await supabase.auth.signOut();
     router.push("/hub");
     router.refresh();
   }

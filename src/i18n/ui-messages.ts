@@ -19,7 +19,7 @@ const en: UiTree = {
   home: {
     hero: {
       scroll: "Scroll to explore",
-      headline: "End-to-End Process Engineering Expertise for Complex Energy Projects",
+      headline: "Energy Engineering for a Changing World",
       sub: "From feasibility to commissioning — OGP delivers full lifecycle process engineering for upstream, midstream, and downstream energy projects worldwide.",
       discuss: "Discuss Your Project",
       capabilities: "View Capabilities →",
@@ -74,7 +74,7 @@ const en: UiTree = {
       exploreServices: "Explore services →",
       caps: [
         {
-          title: "Strategic, Technical & Safety Advisory",
+          title: "Strategic and Technical Advisory",
           hint: "Feasibility · Safety · Tech Eval · Licensor",
           href: "/services#advisory",
         },
@@ -84,7 +84,7 @@ const en: UiTree = {
           href: "/services#engineering",
         },
         {
-          title: "Project Execution Support",
+          title: "Project Delivery Support",
           hint: "Procurement · Commissioning · Construction",
           href: "/services#execution",
         },
@@ -99,11 +99,11 @@ const en: UiTree = {
       diffTitle: "What Makes OGP Different",
       diffs: [
         {
-          title: "End-to-End Expertise",
+          title: "End-to-End Engineering Capability",
           body: "From feasibility study to commissioning walkdown — single-source accountability across every project phase.",
         },
         {
-          title: "Senior Leadership",
+          title: "Senior Subject Matter Expertise",
           body: "Our principals bring 200+ combined years of process engineering experience on major energy projects.",
         },
         {
@@ -133,7 +133,7 @@ const en: UiTree = {
       ],
       commissioning: "Commissioning",
       globalLabel: "Global reach",
-      globalTitle: "Global Experience. Local Standards. Universal Delivery.",
+      globalTitle: "Global Experience and Global Delivery",
       globalP:
         "The senior engineering team brings over 200 years of combined international experience. OGP has delivered process engineering across six regions — operating effectively across diverse regulatory frameworks and environments.",
       regions: ["United States", "North America", "South America", "Middle East", "Europe", "Africa"],
@@ -147,14 +147,14 @@ const en: UiTree = {
   about: {
     label: "About us",
     headline: "Senior-Led Process Engineering from Concept to Commissioning.",
-    p1: "Oil & Gas Processing, LLC is a process engineering consultancy supporting owners, EPC contractors, and project developers across the full asset lifecycle — from strategic feasibility through commissioning support.",
-    p2: "We deliver feasibility studies, FEED, detail engineering, procurement support, and construction advisory with the same senior attention regardless of project scale.",
+    p1: "Oil & Gas Processing (OGP) is a U.S. based global engineering consultancy specializing in oil, gas, and renewable resource processing across the upstream, midstream, and downstream sectors.",
+    p2: "The OGP team brings together senior subject-matter experts with extensive international experience to deliver end-to-end engineering solutions from conceptual design through FEED and detail engineering, technical procurement, and commissioning support.",
     missionL: "Mission",
     mission:
-      "To deliver precise, senior-led process engineering that brings complex energy projects to life — on schedule, on scope, and with full technical accountability.",
+      "To deliver world-class engineering and technical advisory services that enable engineering projects to move from concept to operation with certainty, safety, and efficiency.\n\nOGP partners with investors, owners, and operators to apply the highest engineering standards to oil, gas, and renewable process design and project development worldwide.",
     visionL: "Vision",
     vision:
-      "To be the most trusted independent process engineering partner for the global energy industry — known for senior expertise, global reach, and end-to-end delivery.",
+      "To be recognized globally as a trusted engineering consultancy, known for technical excellence, process safety leadership, and the ability to deliver complex projects across the entire hydrocarbon and emerging energy value chain.",
     globalTitle: "Global Experience",
     globalP1:
       "Our senior engineering team brings more than 200 combined years of experience across oil, gas, refining, and renewable fuels projects delivered in the United States, North America, South America, the Middle East, Europe, and Africa.",

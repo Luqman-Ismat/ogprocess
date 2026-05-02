@@ -1,21 +1,40 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
-import {
-  getHubSessionSnapshot,
-  subscribeHubSession,
-  type HubDemoSession,
-} from "@/lib/hub-demo-session";
+import { useEffect, useState } from "react";
+import { supabase, type HubSession } from "@/lib/supabase";
 
-/**
- * Reads demo hub session from sessionStorage. getHubSessionSnapshot returns a
- * cached reference so useSyncExternalStore does not loop. Server snapshot is
- * always null to match static prerender.
- */
-export function useHubSession(): HubDemoSession | null {
-  return useSyncExternalStore(
-    subscribeHubSession,
-    getHubSessionSnapshot,
-    () => null,
-  );
+export function useHubSession(): HubSession | null | undefined {
+  const [session, setSession] = useState<HubSession | null | undefined>(undefined);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session: s } }) => {
+      if (!s) {
+        setSession(null);
+        return;
+      }
+      setSession({
+        userId: s.user.id,
+        email: s.user.email ?? "",
+        displayName: (s.user.user_metadata?.display_name as string) || s.user.email?.split("@")[0] || "Team Member",
+        title: (s.user.user_metadata?.title as string) || "",
+      });
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, s) => {
+      if (!s) {
+        setSession(null);
+        return;
+      }
+      setSession({
+        userId: s.user.id,
+        email: s.user.email ?? "",
+        displayName: (s.user.user_metadata?.display_name as string) || s.user.email?.split("@")[0] || "Team Member",
+        title: (s.user.user_metadata?.title as string) || "",
+      });
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  return session;
 }

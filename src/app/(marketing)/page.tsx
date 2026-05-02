@@ -48,30 +48,6 @@ export default function Home() {
     <div>
       <HomeHero />
 
-      {/* Process specialists */}
-      <section
-        className="relative py-24 sm:py-32 lg:py-40"
-        style={{ borderTop: "1px solid var(--photo-divider)" }}
-      >
-        <span
-          className="section-index absolute right-4 top-16 -z-0 opacity-[0.45] sm:right-8 lg:right-12 lg:top-24"
-          aria-hidden
-        >
-          01
-        </span>
-        <Reveal className="relative z-[1] mx-auto w-full max-w-none px-5 sm:px-6 lg:px-8 xl:px-10">
-          <h2 className="font-display max-w-4xl text-[2rem] font-light leading-tight sm:text-4xl lg:text-5xl lg:leading-[1.08] text-photo">
-            Process specialists
-          </h2>
-          <p className="mt-8 max-w-2xl text-base leading-relaxed sm:text-lg text-photo-muted">
-            We design and support process systems for ambitious energy projects.
-            Every deliverable reflects our commitment to clarity, technical
-            rigor, and collaboration across owner, licensor, and EPC
-            interfaces.
-          </p>
-        </Reveal>
-      </section>
-
       {/* About strip */}
       <section
         className="surface-band relative py-20 sm:py-28"
@@ -169,14 +145,17 @@ export default function Home() {
             Address
           </p>
           <address className="mt-2 not-italic text-base leading-relaxed text-[var(--color-text)]">
-            33018 Tamina Road
+            14015 Park Dr Ste 109
             <br />
-            Magnolia, TX 77354
+            Tomball, TX 77377
             <br />
             United States
           </address>
+          <p className="mt-3 text-sm text-[var(--color-muted)]">
+            <a href="mailto:info@ogprocess.com" className="nav-link-slide">info@ogprocess.com</a>
+          </p>
           <div className="mt-10">
-            <SectionLink href="/contact" label="Contact" />
+            <SectionLink href="/contact" label="Get in touch →" />
           </div>
         </Reveal>
       </section>

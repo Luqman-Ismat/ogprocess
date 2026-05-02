@@ -11,7 +11,6 @@ function navItems(t: (k: string) => string) {
   return [
     { href: "/about", label: t("nav.about") },
     { href: "/services", label: t("nav.services") },
-    { href: "/contact", label: t("nav.contact") },
     { href: "/hub", label: t("nav.hub") },
   ];
 }

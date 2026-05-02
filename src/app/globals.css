@@ -44,7 +44,14 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: 'Calibri Light', 'Calibri', var(--font-sans), system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Calibri Light';
+  src: local('Calibri Light'), local('Calibri-Light');
+  font-weight: 300;
+  font-style: normal;
 }
 
 body[data-photo-site] {
