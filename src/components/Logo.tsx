@@ -24,7 +24,7 @@ export function Logo({ size = "md", priority = false, className = "" }: LogoProp
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       className={`block object-contain ${sizeClass} ${className}`}
-      style={{ filter: "brightness(0) invert(1)", opacity: 0.88 }}
+      style={{ mixBlendMode: "screen" }}
     />
   );
 }
